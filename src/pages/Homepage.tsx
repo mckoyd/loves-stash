@@ -22,7 +22,7 @@ const Homepage: React.FC = () => {
         {links.map(({ name, link, code, imageLink }: IStashLink) => {
           return (
             <div key={link} className="link-container">
-              <img src={imageLink} className="link-img" />
+              <img src={imageLink} className="link-img" alt={name} />
               <div className="link-details">
                 <a href={link} className="link-name">
                   {name}
