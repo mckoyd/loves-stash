@@ -1,2 +1,46 @@
 .homepage {
 }
+
+.warning-msg-container {
+  background: #eabe6c;
+}
+
+.warning-msg {
+  padding: 1em;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.5em;
+  letter-spacing: 0.05em;
+}
+
+.emphasized {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-container {
+  margin-block: 0;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em;
+}
+
+.link-img {
+  border-radius: 35%;
+  width: 5em;
+}
+
+.link-name {
+  text-decoration: none;
+  color: #891652;
+}
+
+.link-code {
+  margin-block: 0;
+}
