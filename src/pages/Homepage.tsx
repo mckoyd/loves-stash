@@ -1,13 +1,9 @@
 import React from "react";
 
+import "../styles/Homepage.css";
+
 const Homepage: React.FC = () => {
-  return (
-    <section className="homepage">
-      <header className="header">
-        <h1>Love's Stash</h1>
-      </header>
-    </section>
-  );
+  return <section className="homepage"></section>;
 };
 
 export default Homepage;

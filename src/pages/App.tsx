@@ -7,6 +7,9 @@ import Homepage from "./Homepage";
 const App: React.FC = () => {
   return (
     <section className="app-section">
+      <header className="header">
+        <h1 className="title">Love's Stash</h1>
+      </header>
       <Routes>
         <Route path="/" element={<Homepage />} />
       </Routes>
