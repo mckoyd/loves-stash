@@ -1,11 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Love's Stash",
+  "name": "Love's Stash",
   "icons": [
     {
       "src": "logo.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "type": "image/png"
     }
   ],
   "start_url": ".",
