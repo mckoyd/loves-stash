@@ -1,13 +1,41 @@
-import React from "react";
-import { IStashLink } from "../data/stashLinks";
-
+import React, { useCallback, useState } from "react";
 import { useRecoilValue } from "recoil";
+
+import { IStashLink } from "../data/stashLinks";
 import { stashLinksState } from "../state/stashLinks";
+import { ReactComponent as SearchIcon } from "../assets/searchIcon.svg";
+import { ReactComponent as CancelIcon } from "../assets/cancelIcon.svg";
 
 import "../styles/Homepage.css";
 
 const Homepage: React.FC = () => {
   const links = useRecoilValue(stashLinksState);
+  const [searchValue, setSearchValue] = useState<string>("");
+  const [filteredLinks, setFilteredLinks] = useState<IStashLink[]>(links);
+
+  const handleSearchInput = useCallback(
+    (event: React.FormEvent<HTMLInputElement>) => {
+      setSearchValue(event.currentTarget.value.toLowerCase());
+    },
+    []
+  );
+
+  const handleSearchIconButton = useCallback(() => {
+    let updatedList = filteredLinks;
+    if (searchValue === "") {
+      updatedList = links;
+    } else {
+      updatedList = updatedList.filter(({ name }: IStashLink) => {
+        return name.toLowerCase().includes(searchValue);
+      });
+    }
+    setFilteredLinks(updatedList);
+  }, [filteredLinks, searchValue, links]);
+
+  const handleCancelIconButton = useCallback(() => {
+    setFilteredLinks(links);
+    setSearchValue("");
+  }, [links]);
 
   return (
     <section className="homepage">
@@ -22,8 +50,18 @@ const Homepage: React.FC = () => {
           <span className="emphasized">so act fast</span>.
         </p>
       </div>
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          onChange={handleSearchInput}
+          value={searchValue}
+        />
+        <SearchIcon className="input-icon" onClick={handleSearchIconButton} />
+        <CancelIcon className="input-icon" onClick={handleCancelIconButton} />
+      </div>
       <div className="links">
-        {links.map(({ name, link, code, imageLink }: IStashLink) => {
+        {filteredLinks.map(({ name, link, code, imageLink }: IStashLink) => {
           return (
             <div key={link} className="link-container">
               <img src={imageLink} className="link-img" alt={name} />

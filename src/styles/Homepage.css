@@ -18,6 +18,28 @@
   font-weight: 500;
 }
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+
+.search-input {
+  font-size: 1em;
+  border-radius: 25px;
+  padding: 10px;
+  background: #6d2932;
+  color: white;
+}
+
+.input-icon {
+  width: 2em;
+  height: 2em;
+  color: #561c24;
+}
+
 .links {
   display: flex;
   flex-direction: column;
