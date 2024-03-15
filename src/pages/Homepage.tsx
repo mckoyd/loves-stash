@@ -13,9 +13,13 @@ const Homepage: React.FC = () => {
     <section className="homepage">
       <div className="warning-msg-container">
         <p className="warning-msg">
-          All codes are subject to a deadline specific to each code. Codes will
-          be reset regularly (usually on Fridays). Please note there is limited
-          availability per item <span className="emphasized">so act fast</span>.
+          What makes Love's Stash different? All these codes{" "}
+          <span className="emphasized">stack</span>. Which means if you use one
+          code, that code will likely keep working on other products (without
+          needing to type in the code again). All codes are subject to a
+          deadline specific to each code. Codes will be reset regularly (usually
+          on Fridays). Please note there is limited availability per item{" "}
+          <span className="emphasized">so act fast</span>.
         </p>
       </div>
       <div className="links">
