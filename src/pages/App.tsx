@@ -1,7 +1,9 @@
 import React from "react";
 
+import "../styles/App.css";
+
 const App: React.FC = () => {
-  return <section className="app-section"></section>;
+  return <section className="app-section">Hey Beautiful!</section>;
 };
 
 export default App;
