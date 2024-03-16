@@ -70,12 +70,13 @@
   margin: 1em;
   background: #f5a61138;
   border-radius: 10px;
+  font-size: 1.1em;
 }
 
 .link-img {
-  border-radius: 35%;
-  width: 35%;
+  border-radius: 10%;
   margin-bottom: auto;
+  width: 35%;
 }
 
 .link-name {
@@ -90,7 +91,7 @@
 }
 
 .link-details {
-  isplay: flex;
+  display: flex;
   flex-direction: column;
   height: 100%;
   width: 70%;
