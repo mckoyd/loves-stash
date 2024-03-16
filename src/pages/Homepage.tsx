@@ -20,7 +20,7 @@ const Homepage: React.FC = () => {
       setShowResults(false);
       setFilteredLinks(links);
     },
-    []
+    [links]
   );
 
   const handleSearchIconButton = useCallback(() => {
