@@ -12,10 +12,13 @@ const Homepage: React.FC = () => {
   const links = useRecoilValue(stashLinksState);
   const [searchValue, setSearchValue] = useState<string>("");
   const [filteredLinks, setFilteredLinks] = useState<IStashLink[]>(links);
+  const [showResults, setShowResults] = useState<boolean>(false);
 
   const handleSearchInput = useCallback(
     (event: React.FormEvent<HTMLInputElement>) => {
       setSearchValue(event.currentTarget.value.toLowerCase());
+      setShowResults(false);
+      setFilteredLinks(links);
     },
     []
   );
@@ -30,11 +33,13 @@ const Homepage: React.FC = () => {
       });
     }
     setFilteredLinks(updatedList);
+    setShowResults(true);
   }, [filteredLinks, searchValue, links]);
 
   const handleCancelIconButton = useCallback(() => {
     setFilteredLinks(links);
     setSearchValue("");
+    setShowResults(false);
   }, [links]);
 
   return (
@@ -56,10 +61,17 @@ const Homepage: React.FC = () => {
           className="search-input"
           onChange={handleSearchInput}
           value={searchValue}
+          placeholder="SEARCH"
         />
         <SearchIcon className="input-icon" onClick={handleSearchIconButton} />
         <CancelIcon className="input-icon" onClick={handleCancelIconButton} />
       </div>
+      {showResults && (
+        <h2 className="search-results-title">
+          Search Results for:{" "}
+          <span className="search-value">"{searchValue}"</span>
+        </h2>
+      )}
       <div className="links">
         {filteredLinks.map(({ name, link, code, imageLink }: IStashLink) => {
           return (
