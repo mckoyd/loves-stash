@@ -36,6 +36,15 @@ const Homepage: React.FC = () => {
     setShowResults(true);
   }, [filteredLinks, searchValue, links]);
 
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.code === "Enter") {
+        handleSearchIconButton();
+      }
+    },
+    [handleSearchIconButton]
+  );
+
   const handleCancelIconButton = useCallback(() => {
     setFilteredLinks(links);
     setSearchValue("");
@@ -62,8 +71,10 @@ const Homepage: React.FC = () => {
           onChange={handleSearchInput}
           value={searchValue}
           placeholder="SEARCH"
+          onKeyDown={handleKeyDown}
         />
         <SearchIcon className="input-icon" onClick={handleSearchIconButton} />
+
         <CancelIcon className="input-icon" onClick={handleCancelIconButton} />
       </div>
       {showResults && (
