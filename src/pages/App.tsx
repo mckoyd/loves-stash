@@ -9,7 +9,7 @@ const App: React.FC = () => {
   return (
     <section className="app-section">
       <header className="header">
-        <h1 className="title">Love's Stash</h1>
+        <h1 className="title">Luv's Stash</h1>
         <Logo className="logo" />
       </header>
       <Routes>
