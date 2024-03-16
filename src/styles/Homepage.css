@@ -66,11 +66,16 @@
   align-items: center;
   gap: 1em;
   padding: 0.5em;
+  border: 1px solid white;
+  margin: 1em;
+  background: #f5a61138;
+  border-radius: 10px;
 }
 
 .link-img {
   border-radius: 35%;
-  width: 8em;
+  width: 35%;
+  margin-bottom: auto;
 }
 
 .link-name {
@@ -82,4 +87,13 @@
   margin-block: 0;
   font-weight: 300;
   color: #240a34;
+}
+
+.link-details {
+  isplay: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 70%;
+  margin-bottom: auto;
+  line-height: 1.2;
 }
