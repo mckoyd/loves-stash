@@ -11,9 +11,7 @@ import "../styles/Homepage.css";
 const Homepage: React.FC = () => {
   const links = useRecoilValue(stashLinksState);
   const [searchValue, setSearchValue] = useState<string>("");
-  const [filteredLinks, setFilteredLinks] = useState<IStashLink[]>(
-    links.reverse()
-  );
+  const [filteredLinks, setFilteredLinks] = useState<IStashLink[]>(links);
   const [showResults, setShowResults] = useState<boolean>(false);
 
   const handleSearchInput = useCallback(
