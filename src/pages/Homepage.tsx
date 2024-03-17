@@ -55,7 +55,7 @@ const Homepage: React.FC = () => {
     <section className="homepage">
       <div className="warning-msg-container">
         <p className="warning-msg">
-          What makes Love's Stash different? All these codes{" "}
+          What makes Luv's Stash different? All these codes{" "}
           <span className="emphasized">stack</span>. Which means if you use one
           code, that code will likely keep working on other products (without
           needing to type in the code again). All codes are subject to a
