@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/loves-stash/static/css/main.e1f9d21e.css",
+    "main.js": "/loves-stash/static/js/main.994e7551.js",
+    "static/media/logo.svg": "/loves-stash/static/media/logo.56ce2f01cfbd54c82133310993c3358d.svg",
+    "index.html": "/loves-stash/index.html",
+    "static/media/cancelIcon.svg": "/loves-stash/static/media/cancelIcon.1ff57ce6780d039fcce3508f0763e1b8.svg",
+    "static/media/searchIcon.svg": "/loves-stash/static/media/searchIcon.82d3481840537f55a197ec3b7d2e44f5.svg",
+    "main.e1f9d21e.css.map": "/loves-stash/static/css/main.e1f9d21e.css.map",
+    "main.994e7551.js.map": "/loves-stash/static/js/main.994e7551.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e1f9d21e.css",
+    "static/js/main.994e7551.js"
+  ]
+}
