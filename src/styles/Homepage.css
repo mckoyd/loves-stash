@@ -2,7 +2,17 @@
 }
 
 .warning-msg-container {
-  background: #eabe6c;
+}
+
+.disclaimer-btn {
+  font-size: 1em;
+  border-radius: 10px;
+  padding: 10px;
+  background: #a6505b;
+  color: white;
+  width: 50%;
+  margin-bottom: 1em;
+  border: 1px white solid;
 }
 
 .warning-msg {
@@ -11,6 +21,8 @@
   text-align: center;
   line-height: 1.5em;
   letter-spacing: 0.05em;
+  border: 1px dashed #6d2932;
+  margin: 0 1em;
 }
 
 .emphasized {

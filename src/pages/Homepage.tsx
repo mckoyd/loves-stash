@@ -10,10 +10,14 @@ import "../styles/Homepage.css";
 
 const Homepage: React.FC = () => {
   const links = useRecoilValue(stashLinksState);
+  const [showDisclaimer, setShowDisclaimer] = useState<boolean>(false);
   const [searchValue, setSearchValue] = useState<string>("");
   const [filteredLinks, setFilteredLinks] = useState<IStashLink[]>(links);
   const [showResults, setShowResults] = useState<boolean>(false);
 
+  const handleDisclaimer = useCallback(() => {
+    setShowDisclaimer((prev) => !prev);
+  }, []);
   const handleSearchInput = useCallback(
     (event: React.FormEvent<HTMLInputElement>) => {
       setSearchValue(event.currentTarget.value.toLowerCase());
@@ -54,15 +58,24 @@ const Homepage: React.FC = () => {
   return (
     <section className="homepage">
       <div className="warning-msg-container">
-        <p className="warning-msg">
-          What makes Luv's Stash different? All these codes{" "}
-          <span className="emphasized">stack</span>. Which means if you use one
-          code, that code will likely keep working on other products (without
-          needing to type in the code again). All codes are subject to a
-          deadline specific to each code. Codes will be reset regularly (usually
-          on Fridays). Please note there is limited availability per item{" "}
-          <span className="emphasized">so act fast</span>.
-        </p>
+        <button
+          type="button"
+          className="disclaimer-btn"
+          onClick={handleDisclaimer}
+        >
+          {showDisclaimer ? "Hide Disclaimer" : "Show Disclaimer"}
+        </button>
+        {showDisclaimer && (
+          <p className="warning-msg">
+            What makes Luv's Stash different? All these codes{" "}
+            <span className="emphasized">stack</span>. Which means if you use
+            one code, that code will likely keep working on other products
+            (without needing to type in the code again). All codes are subject
+            to a deadline specific to each code. Codes will be reset regularly
+            (usually on Fridays). Please note there is limited availability per
+            item <span className="emphasized">so act fast</span>.
+          </p>
+        )}
       </div>
       <div className="search-container">
         <input
